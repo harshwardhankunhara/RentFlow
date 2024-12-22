@@ -1,0 +1,63 @@
+<style>
+  .btn-search {
+    background-color: #1A8D8D;
+    color: #fff;
+    padding: 0 1rem 0 1rem;
+    border-radius: 25px;
+  }
+  .btn-search:hover {
+    background-color: #1A8D8D;
+    color: #fff;
+  }
+  .btn-search i {
+    display: inline;
+    margin-right: 0.5rem;
+  }
+  .search-input {
+    outline: none;
+    border-radius: 25px;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+  }
+</style>
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <!-- First div (brand with explore and arrow) remains unchanged -->
+    <a class="navbar-brand" href="/listings">
+      <i class="fa-solid fa-location-arrow"></i> Explore
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <!-- Removed extra "Explore" with arrow from here -->
+        <!-- Only the brand "Explore" with arrow is kept in the first div -->
+      </div>
+    </div>
+
+    <!-- Centered Search Bar (second div) remains centered -->
+    <div class="navbar-nav mx-auto d-flex justify-content-center align-items-center">
+      <form class="d-flex" role="search">
+        <input class="form-control me-2 search-input" type="search" placeholder="Search Destination" />
+        <button class="btn btn-search" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>Search
+        </button>
+      </form>
+    </div>
+
+    <!-- Third div (user links) remains unchanged -->
+    <div class="navbar-nav ms-auto">
+      <a class="nav-link" href="/listings/new">Host a stay</a>
+      <% if(!currUser){ %>
+      <a class="nav-link" href="/signup"><b>Sign up</b></a>
+      <a class="nav-link" href="/login"><b>Log in</b></a>
+      <% } %> 
+      <% if(currUser){ %>
+      <a class="nav-link" href="/logout"><b>Log Out</b></a>
+      <% } %>
+    </div>
+  </div>
+</nav>
